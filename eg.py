@@ -16,6 +16,13 @@ voicespeed = 140  # setting speed
 engine.setProperty('rate', voicespeed)
 chrome_path = '"C:/Program Files/Google/Chrome/Application/chrome.exe" %s'
 
+def playsongs():
+    n = random.randint(0, 10)
+    print(n)
+    music_dir = "D:/JAPNESE SONGS/japanese song"
+    songs = os.listdir(music_dir)
+    print(songs)
+    os.startfile(os.path.join(music_dir, songs[n]))
 
 def speak(audio):
     engine.say(audio)
@@ -183,3 +190,5 @@ if __name__ == "__main__":
         elif "new virtual desktop" in query:
             # Win+Ctrl+D: Add a new virtual desktop
             pyautogui.hotkey('winleft', 'ctrl', 'd')
+            
+        
